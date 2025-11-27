@@ -1,15 +1,18 @@
-/*==============================*/
-/* 変数 */
-/*==============================*/
+/* リセットと基本スタイル */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 :root {
-    --mainColor: rgb(0, 82, 73);
-    --subColor: #A8BD38;
-    --accentColor: rgb(217, 220, 65);
-    --textColor: #002724;
-    --bgColor: #FEFFFD;
-    --gray: #C5C5C5;
-    --easing: cubic-bezier(0.2, 1, 0.2, 1);
-    --transition: 0.8s var(--easing);
+    --mainColor: #A5F23A;
+    --baseColor: #F2F2F2;
+    --fontColor: #333;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
@@ -21,9 +24,32 @@ body {
     background-color: var(--baseColor);
 }
 
+.primary-button {
+    position: relative;
+    width: 100%;
+    background-color: var(--mainColor);
+    padding-block: 16px;
+    z-index: 50;
+}
+
+.primary-button a::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    inset: 0;
+    z-index: 50;
+}
+
+a {
+    text-decoration: none;
+    color: var(--fontColor);
+}
+
+
 
 /* ------------------------------------- */
-/* ヘッダーとナビゲーションメニュー｜2025.11.25*/
+/* ヘッダーとナビゲーションメニュー */
 /* ------------------------------------- */
 
 .header {
@@ -171,6 +197,10 @@ body {
 }
 
 
+/* ------------------------------------- */
+/* メインコンテンツ */
+/* ------------------------------------- */
+
 main {
     width: 100%;
     max-width: 1200px;
@@ -300,7 +330,6 @@ footer {
     font-size: clamp(1rem, 0.757rem + 1.04vw, 2rem);
     font-weight: bold;
     aspect-ratio: 8.75vw;
-    border-top: 3px solid var(--fontColor);
 }
 
 
